@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>My Webpage</title>
+    </head>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var clickMeButton = document.getElementById("clickMeButton");
+
+            clickMeButton.addEventListener("click", function () {
+                alert("Button clicked!");
+            });
+        });
+
+        // Get the current URL path
+        var path = window.location.pathname.split("/").pop();
+
+        // Highlight the active page in the navigation menu
+        document.addEventListener("DOMContentLoaded", function () {
+            var navLinks = document.querySelectorAll("nav a");
+            navLinks.forEach(function (link) {
+                if (link.getAttribute("href") === path || (link.getAttribute("href") === 'index.html' && path === '')) {
+                    link.classList.add("active");
+                }
+            });
+        });
+
+    </script>
+
+    <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">My Webpage</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-4">
+        <div class="jumbotron">
+            <h1 class="display-4">Our Services</h1>
+            <hr class="my-4">
+            <ul class="list-group">
+                <li class="list-group-item">Web Design</li>
+                <li class="list-group-item">Web Development</li>
+                <li class="list-group-item">SEO Optimization</li>
+            </ul>
+            <section class="why-choose-us">
+                <div class="container">
+                    <h2 class="section-title">Why Choose Us</h2>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <h3>Experienced Team</h3>
+                                <p>Our team consists of experts in their respective fields with years of experience.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature">
+                                <i class="fas fa-thumbs-up"></i>
+                                <h3>Quality Service</h3>
+                                <p>We are committed to delivering high-quality services that meet your needs.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="feature">
+                                <i class="fas fa-clock"></i>
+                                <h3>Timely Delivery</h3>
+                                <p>We value your time and ensure timely project completion.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Web Design</td>
+                        <td>$500</td>
+                    </tr>
+                    <tr>
+                        <td>Web Development</td>
+                        <td>$800</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <button id="clickMeButton" class="btn btn-primary">Click Me</button>
+
+    </main>
+    </body>
+
+
+
+</html>
